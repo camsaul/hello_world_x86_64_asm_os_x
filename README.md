@@ -1,6 +1,8 @@
 Hello World in x86_64 Assembly (NASM) for Mac OS X
 ===========================
 
+Suitable for use as a starting-point for x86_64 NASM projects on OS X.
+
 ## Installing NASM
 
     git clone git://repo.or.cz/nasm.git
