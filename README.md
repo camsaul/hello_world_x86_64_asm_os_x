@@ -6,6 +6,7 @@ Suitable for use as a starting-point for x86_64 NASM projects on OS X.
 ## Installing NASM
 
     git clone git://repo.or.cz/nasm.git
+    cd nasm
     brew install docbook asciidoc xmlto # not sure these are all needed, but at least one of them is
     ./configure CC="gcc-4.9"            # Specifying which compiler to use is optional
     make -j                             # -j with no args = use infinite jobs
