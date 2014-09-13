@@ -1,3 +1,5 @@
+.PHONY: assemble link clean
+
 test: assemble link
 
 assemble:
