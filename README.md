@@ -1,12 +1,20 @@
-hello_world_x86_84_asm_os_x
+Hello World in x86_64 Assembly (NASM) for Mac OS X
 ===========================
 
-* Install NASM `git://repo.or.cz/nasm.git`
-* Install other dependencies (not sure all of these are needed, but at least one of them are) `brew install docbook asciidoc xmlto`
-* `./autogen.sh`
-* Configure. You don't have to specify which C compiler to use but I felt like using GCC 4.9 `./configure CC="gcc-4.9"`
-* `make -j` 
-* `make strip` doesn't work on OS X, you can do this instead:
-    strip -x nasm
-    strip -x ndisasm
-* `sudo make install`
+## Installing NASM
+
+    git clone git://repo.or.cz/nasm.git
+    brew install docbook asciidoc xmlto # not sure these are all needed, but at least one of them is
+    ./configure CC="gcc-4.9"            # Specifying which compiler to use is optional
+    make -j                             # -j with no args = use infinite jobs
+    strip -x nasm ndisasm               # make strip doesn't work on OS X. (this step is optional)
+    sudo make install
+
+After this, `nasm -v` should give you something like `NASM version 2.11.05`
+
+## Hello, World!
+
+Just use the provided Makefile.
+
+    make    # nasm -f macho64 -o ./test.o test.asm
+            # ld test.o -o test -e _main -no_pie -macosx_version_min 10.9 -lSystem
